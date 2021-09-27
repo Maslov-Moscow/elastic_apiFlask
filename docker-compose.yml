@@ -1,0 +1,28 @@
+version: '3'
+services:
+
+  web:
+    build: ./
+    ports:
+      - "80:80"
+    networks:
+      - docker_lr
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.5.2
+    environment:
+#      - node.name=elasticsearch
+#      - cluster.name=es-docker-cluster
+#      - bootstrap.memory_lock=true
+#      - cluster.initial_master_nodes=elasticsearch
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - docker_lr
+    container_name: elasticsearch
+
+networks:
+  docker_lr:
+    driver: bridge

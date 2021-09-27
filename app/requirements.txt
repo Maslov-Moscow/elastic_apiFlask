@@ -1,0 +1,16 @@
+certifi==2021.5.30
+click==8.0.1
+click-conf==0.0.1
+click-stream==0.0.10
+colorama==0.4.4
+elasticsearch==7.15.0
+elasticsearch-loader==0.6.0
+Flask==2.0.1
+flask-swagger-ui==3.36.0
+itsdangerous==2.0.1
+Jinja2==3.0.1
+MarkupSafe==2.0.1
+pyaml==21.8.3
+PyYAML==5.4.1
+urllib3==1.26.7
+Werkzeug==2.0.1

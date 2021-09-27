@@ -1,0 +1,73 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: API для поиска записей по тексту.
+  version: 0.0.1
+servers:
+
+paths:
+  /:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                text: # <!--- form field name
+                  type: string
+
+              required:
+                - name
+      summary: Возвращает список заисей
+      responses:
+        '200':    # status code
+          description: Json с записями
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: Id записи.
+                    example: 11
+                  text:
+                    type: string
+                    description: Текст записи.
+                    example: Вот такой текс
+                  rubrics:
+                    type: string
+                    description: Рубрики записи.
+                    example: VK-1603736028819866' 'VK-82569256027' 'VK-33588408506
+                  created_date:
+                    type: string
+                    description: Дата создания.
+                    example: '2019-09-22 12:15:34'
+  /delete/{RecordID}:
+    delete:
+      parameters:
+        - in: path
+          name: RecordID
+          schema:
+            type: integer
+          required: true
+          description: ID записи.
+      summary: Удаление записи
+      responses:
+          '200': # status code
+            description: удаление
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    succes: # <!--- form field name
+                      type: string
+                      example: true
+
+
+
+
+
