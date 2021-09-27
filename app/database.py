@@ -22,13 +22,3 @@ class SQLdatabase:
             sql = f"DELETE FROM posts WHERE id = {id_rec}"
             self.cursor.execute(sql)
 
-# (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
-
-# db = SQLdatabase()
-# db.cursor.execute('''CREATE TABLE IF NOT EXISTS posts
-#                      (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL ,
-#                      text TEXT,
-#                      created_date TEXT,
-#                      rubrics TEXT)''')
-# res = db.cursor.execute("SELECT id, text FROM posts ").fetchall()
-# print(res[1])
